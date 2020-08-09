@@ -1,6 +1,8 @@
 const express = require('express');
 const hbs = require('hbs');
 const fs = require('fs');
+
+const port = process.env.PORT || 3000;
 var app = express();
 
 app.set('view engine','hbs');
@@ -62,6 +64,6 @@ app.get('/error', (req,res) => {
      errorMessage: 'Unable to handle request'
    });
 });
-app.listen(3000, () => {
+app.listen(port, () => {
   console.log('Server started on Port:3000');
 });
